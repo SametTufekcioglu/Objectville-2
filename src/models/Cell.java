@@ -7,6 +7,7 @@ public abstract class Cell {
     private boolean hasSecurity = false;
     private boolean hasHealth = false;
     private boolean hasEducation = false;
+
     public Cell(int x, int y) {
         this.x = x;
         this.y = y;
@@ -45,9 +46,10 @@ public abstract class Cell {
     }
 
     public void resetServices(){
-        this.hasSecurity=false;
-        this.hasHealth=false;
-        this.hasEducation=false;
+        this.hasSecurity = false;
+        this.hasHealth = false;
+        this.hasEducation = false;
     }
+
     public abstract char getSymbol();
 }
