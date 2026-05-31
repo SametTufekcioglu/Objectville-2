@@ -1,6 +1,7 @@
 import core.CityGrid;
 import io.MapParser;
 import models.Cell;
+import core.SimlulationEngine;
 
 public class Main {
     public static void main(String[] args) {
@@ -25,18 +26,13 @@ public class Main {
         MapParser parser = new MapParser();
         parser.loadData(mapFilePath);
         CityGrid grid = parser.getCityGrid();
-        // TODO: 4. geliştiricinin Simulation sınıfı buraya eklenecek ve ticks değişkeni ona yollanacak
 
-        for (int i = 0; i < grid.getRows(); i++) {
-            for (int j = 0; j < grid.getCols(); j++) {
-                Cell currentCell = grid.getCell(i, j);
-                if(currentCell != null){
-                    System.out.print(currentCell.getSymbol());
-                }else{
-                    System.out.print(" ");
-                }
-            }
-            System.out.println();
+        if(grid!=null){
+            SimlulationEngine engine = new SimlulationEngine(grid,ticks);
+            engine.startSimulation();
+        }
+        else{
+            System.out.println("Error: CityGrid could not be loaded!");
         }
     }
 }
