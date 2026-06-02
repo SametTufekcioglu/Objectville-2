@@ -4,6 +4,17 @@ import core.CityGrid;
 import models.Cell;
 import models.Empty;
 import models.Road;
+import models.utilities.PowerPlant;
+import models.utilities.WaterPumpingStation;
+import models.utilities.InternetHub;
+// Dev 3 changed (added) below
+import models.zones.Housing;
+import models.zones.Industrial;
+import models.zones.Commercial;
+import models.services.PoliceStation;
+import models.services.Hospital;
+import models.services.School;
+// Dev 3 changed (added) above
 
 import java.io.IOException;
 import java.nio.file.Paths;
@@ -45,9 +56,27 @@ public class MapParser {
                         newCell = new Road(currentRow, currentCol);
                     } else if (symbol == 'E') {
                         newCell = new Empty(currentRow, currentCol);
-
-                //siz buradaki diğer yerleri doldurunca (H, I falan) bu else kısmını da silersiniz
-                    }else{
+                    } else if (symbol == 'P') {
+                        newCell = new PowerPlant(currentRow, currentCol);
+                    } else if (symbol == 'W') {
+                        newCell = new WaterPumpingStation(currentRow, currentCol);
+                    } else if (symbol == 'T') {
+                        newCell = new InternetHub(currentRow, currentCol);
+                        // Dev 3 changed (added) below
+                    } else if (symbol == 'H') {
+                        newCell = new Housing(currentRow, currentCol);
+                    } else if (symbol == 'I') {
+                        newCell = new Industrial(currentRow, currentCol);
+                    } else if (symbol == 'C') {
+                        newCell = new Commercial(currentRow, currentCol);
+                    } else if (symbol == 'F') {
+                        newCell = new PoliceStation(currentRow, currentCol);
+                    } else if (symbol == 'D') {
+                        newCell = new Hospital(currentRow, currentCol);
+                    } else if (symbol == 'S') {
+                        newCell = new School(currentRow, currentCol);
+                        // Dev 3 added above
+                    } else {
                         newCell = new Empty(currentRow, currentCol);
                     }
 

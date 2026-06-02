@@ -2,6 +2,8 @@ package core;
 
 import models.Cell;
 import models.services.ServiceProvider;
+import algorithms.BFSUtilityDistributor;
+import models.utilities.UtilityProvider;
 
 public class SimlulationEngine {
     private CityGrid cityGrid;
@@ -32,7 +34,14 @@ public class SimlulationEngine {
                 }
             }
 
-            //TODO:Develepor 3 BFS
+            for(int i=0;i<rows;i++){
+                for(int j=0;j<cols;j++){
+                    Cell cell = cityGrid.getCell(i,j);
+                    if(cell instanceof UtilityProvider){
+                        BFSUtilityDistributor.distribute(cityGrid, (UtilityProvider) cell);
+                    }
+                }
+            }
 
             if(tick>1){
                 //TODO Developer 2 distribute pool resources
@@ -53,7 +62,8 @@ public class SimlulationEngine {
             for(int j = 0;j<cols;j++){
                 Cell cell = cityGrid.getCell(i,j);
                 if(cell!=null){
-                    System.out.println(cell.getSymbol()+" ");
+                    System.out.print(cell.getSymbol());
+                    //System.out.println(cell.getSymbol()+" ");
                 }
                 else{
                     System.out.println(". ");
