@@ -9,10 +9,31 @@ public abstract class Zone extends Cell {
     protected int receivedElectricity = 0;
     protected int receivedWater = 0;
     protected int receivedInternet = 0;
+    // DEV 3 WRITED
+    protected int receivedPopulation = 0;
+    protected int receivedGoods = 0;
+    protected int receivedLifestyle = 0;
+
+    public void addReceivedPopulation(int pop) { this.receivedPopulation += pop; }
+    public void addReceivedGoods(int goods) { this.receivedGoods += goods; }
+    public void addReceivedLifestyle(int lifestyle) { this.receivedLifestyle += lifestyle; }
+    // DEV 3 WRITED
 
     protected boolean hasSecurity = false;
     protected boolean hasHealth = false;
     protected boolean hasEducation = false;
+
+    // DEV 3 WRITED
+    public boolean isSecurity() { return hasSecurity; }
+    public boolean isHealth() { return hasHealth; }
+    public boolean isEducation() { return hasEducation; }
+    public int getReceivedElectricity() { return receivedElectricity; }
+    public int getReceivedWater() { return receivedWater; }
+    public int getReceivedInternet() { return receivedInternet; }
+    public int getReceivedPopulation() { return receivedPopulation; }
+    public int getReceivedGoods() { return receivedGoods; }
+    public int getReceivedLifestyle() { return receivedLifestyle; }
+    // DEV 3 WRITED
 
     public Zone(int x, int y) {
         super(x, y);
@@ -28,6 +49,9 @@ public abstract class Zone extends Cell {
         this.receivedElectricity = 0;
         this.receivedWater = 0;
         this.receivedInternet = 0;
+        this.receivedPopulation = 0;    // DEV 3
+        this.receivedGoods = 0;         // DEV 3
+        this.receivedLifestyle = 0;     // DEV 3
         this.hasSecurity = false;
         this.hasHealth = false;
         this.hasEducation = false;
