@@ -7,36 +7,41 @@ public class Housing extends Zone {
         super(x, y);
     }
 
-    @Override 
-    public char getSymbol() { 
-        return 'H'; 
+    @Override
+    public char getSymbol() {
+        return 'H';
     }
-    
-    @Override 
-    public boolean needsElectricity() { 
-        return true; 
+
+    @Override
+    public boolean needsElectricity() {
+        return true;
     }
-    
-    @Override 
-    public boolean needsWater() { 
-        return true; 
+
+    @Override
+    public boolean needsWater() {
+        return true;
     }
-    
-    @Override 
-    public boolean needsInternet() { 
-        return true; 
+
+    @Override
+    public boolean needsInternet() {
+        return true;
+    }
+
+    @Override
+    protected boolean canReachLevel1() {
+        return true;
     }
 
     @Override
     protected boolean canLevelUpTo(int targetLevel) {
-        if (targetLevel <= 1) {
-            return true;
+        if (targetLevel == 1) {
+            return canReachLevel1();
         }
         if (targetLevel == 2) {
-            return hasSecurity && hasHealth && hasEducation;
+            return isHasSecurity() && isHasHealth() && isHasEducation();
         }
         if (targetLevel == 3) {
-            return hasSecurity && hasHealth && hasEducation && receivedLifestyle > 0;
+            return isHasSecurity() && isHasHealth() && isHasEducation() && receivedLifestyle > 0;
         }
         return false;
     }
@@ -52,16 +57,16 @@ public class Housing extends Zone {
         if (level == 2) {
             return 2 * m;
         }
-        return (2 * m) + receivedLifestyle; 
+        return (2 * m) + receivedLifestyle;
     }
 
-    public void setLifestyle(int l) { 
-        this.receivedLifestyle = l; 
+    public void setLifestyle(int l) {
+        receivedLifestyle = l;
     }
-    
+
     @Override
     public void resetTurn() {
         super.resetTurn();
-        this.receivedLifestyle = 0;
+        receivedLifestyle = 0;
     }
 }
