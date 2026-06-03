@@ -35,7 +35,7 @@ public class Industrial extends Zone {
     @Override
     protected boolean canLevelUpTo(int targetLevel) {
         if (targetLevel == 1) {
-            return true;
+            return canReachLevel1();
         }
         if (targetLevel == 2) {
             return isHasSecurity();
