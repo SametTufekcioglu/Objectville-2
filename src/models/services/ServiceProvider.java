@@ -2,13 +2,18 @@ package models.services;
 
 import core.CityGrid;
 import models.Cell;
+import models.zones.Housing;
+import models.zones.Industrial;
+import models.zones.Commercial;
 
 public abstract class ServiceProvider extends Cell {
     private int radius;
+
     public ServiceProvider(int x,int y,int radius){
         super(x,y);
         this.radius=radius;
     }
+
     public int getRadius(){
         return radius;
     }
@@ -26,6 +31,21 @@ public abstract class ServiceProvider extends Cell {
 
                 if(distance<=this.radius){
                     applyService(target);
+
+                    // Örnek çıktıdaki isimlendirmelerle log basalım:
+                    String targetTypeName = "";
+                    if (target instanceof Housing) targetTypeName = "House";
+                    else if (target instanceof Industrial) targetTypeName = "Industrial";
+                    else if (target instanceof Commercial) targetTypeName = "Commercial";
+
+                    String serviceName = "";
+                    if (this instanceof PoliceStation) serviceName = "security";
+                    else if (this instanceof Hospital) serviceName = "health";
+                    else if (this instanceof School) serviceName = "education";
+
+                    if (!targetTypeName.isEmpty()) {
+                        System.out.println(targetTypeName + " at (" + i + "," + j + ") received " + serviceName + " service");
+                    }
                 }
             }
         }

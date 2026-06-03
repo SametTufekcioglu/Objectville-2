@@ -42,7 +42,7 @@ public class MapParser {
 
             cityGrid = new CityGrid(rows, cols);
 
-            fileReader = new Scanner(Paths.get("mymap.txt"));
+            fileReader = new Scanner(Paths.get(filePath));
             int currentRow = 0;
 
             while(fileReader.hasNextLine()) {

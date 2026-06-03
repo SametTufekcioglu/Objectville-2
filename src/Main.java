@@ -3,8 +3,6 @@ import io.MapParser;
 import models.Cell;
 import core.SimlulationEngine;
 
-import java.io.IOException;
-
 public class Main {
     public static void main(String[] args) {
         if(args.length<2){
@@ -31,16 +29,7 @@ public class Main {
 
         if(grid!=null){
             SimlulationEngine engine = new SimlulationEngine(grid,ticks);
-            //engine.startSimulation();
-
-            // DEV 3 WRITED
-            // AFTER
-            try {
-                engine.startSimulation();
-            } catch (IOException e) {
-                System.out.println("Error during simulation: " + e.getMessage());
-                e.printStackTrace();
-            }
+            engine.startSimulation();
         }
         else{
             System.out.println("Error: CityGrid could not be loaded!");
