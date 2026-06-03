@@ -66,7 +66,7 @@ public class SimlulationEngine {
                     //System.out.println(cell.getSymbol()+" ");
                 }
                 else{
-                    System.out.println(". ");
+                    System.out.print(". ");
                 }
             }
             System.out.println();

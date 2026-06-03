@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dfa1f88-cc03-4eb7-bfd5-cd96bbc71efc" name="Changes" comment="Trying to apply base settings">
-      <change beforePath="$PROJECT_DIR$/src/core/SimlulationEngine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/SimlulationEngine.java" afterDir="false" />
-    </list>
+    <list default="true" id="9dfa1f88-cc03-4eb7-bfd5-cd96bbc71efc" name="Changes" comment="Trying to apply base settings" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
