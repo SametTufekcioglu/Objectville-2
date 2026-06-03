@@ -8,36 +8,41 @@ public class Commercial extends Zone {
         super(x, y);
     }
 
-    @Override 
-    public char getSymbol() { 
-        return 'C'; 
+    @Override
+    public char getSymbol() {
+        return 'C';
     }
-    
-    @Override 
-    public boolean needsElectricity() { 
-        return true; 
+
+    @Override
+    public boolean needsElectricity() {
+        return true;
     }
-    
-    @Override 
-    public boolean needsWater() { 
-        return true; 
+
+    @Override
+    public boolean needsWater() {
+        return true;
     }
-    
-    @Override 
-    public boolean needsInternet() { 
-        return true; 
+
+    @Override
+    public boolean needsInternet() {
+        return true;
+    }
+
+    @Override
+    protected boolean canReachLevel1() {
+        return receivedPopulation > 0 && receivedGoods > 0;
     }
 
     @Override
     protected boolean canLevelUpTo(int targetLevel) {
-        if (targetLevel <= 1) {
+        if (targetLevel == 1) {
             return true;
         }
         if (targetLevel == 2) {
-            return hasSecurity;
+            return isHasSecurity();
         }
         if (targetLevel == 3) {
-            return hasSecurity && receivedPopulation > 0 && receivedGoods > 0;
+            return isHasSecurity() && receivedPopulation > 0 && receivedGoods > 0;
         }
         return false;
     }
@@ -53,21 +58,21 @@ public class Commercial extends Zone {
         if (level == 2) {
             return 2 * m;
         }
-        return (2 * m) + (receivedPopulation * receivedGoods);
+        return (2 * m) + Math.min(receivedPopulation, receivedGoods);
     }
 
-    public void setPopulation(int p) { 
-        this.receivedPopulation = p; 
+    public void setPopulation(int p) {
+        receivedPopulation = p;
     }
-    
-    public void setGoods(int g) { 
-        this.receivedGoods = g; 
+
+    public void setGoods(int g) {
+        receivedGoods = g;
     }
-    
+
     @Override
     public void resetTurn() {
         super.resetTurn();
-        this.receivedPopulation = 0;
-        this.receivedGoods = 0;
+        receivedPopulation = 0;
+        receivedGoods = 0;
     }
 }

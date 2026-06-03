@@ -10,10 +10,6 @@ public abstract class Zone extends Cell {
     protected int receivedWater = 0;
     protected int receivedInternet = 0;
 
-    protected boolean hasSecurity = false;
-    protected boolean hasHealth = false;
-    protected boolean hasEducation = false;
-
     public Zone(int x, int y) {
         super(x, y);
     }
@@ -21,21 +17,21 @@ public abstract class Zone extends Cell {
     public abstract boolean needsElectricity();
     public abstract boolean needsWater();
     public abstract boolean needsInternet();
+
+    protected abstract boolean canReachLevel1();
     protected abstract boolean canLevelUpTo(int targetLevel);
     protected abstract int calculateOutput(int m);
 
     public void resetTurn() {
-        this.receivedElectricity = 0;
-        this.receivedWater = 0;
-        this.receivedInternet = 0;
-        this.hasSecurity = false;
-        this.hasHealth = false;
-        this.hasEducation = false;
+        receivedElectricity = 0;
+        receivedWater = 0;
+        receivedInternet = 0;
+        resetServices();
     }
 
     public void updateTick() {
         int m = Integer.MAX_VALUE;
-        
+
         if (needsElectricity()) {
             m = Math.min(m, receivedElectricity);
         }
@@ -51,46 +47,53 @@ public abstract class Zone extends Cell {
         }
 
         if (m == 0) {
-            level = 0; 
-        } else {
-            if (canLevelUpTo(level + 1) && level < 3) {
-                level++;
-            } else if (!canLevelUpTo(level) && level > 0) {
-                level--;
+            level = 0;
+            output = 0;
+            return;
+        }
+
+        if (level == 0) {
+            if (canReachLevel1()) {
+                level = 1;
+            }
+        } else if (level == 1) {
+            if (canLevelUpTo(2)) {
+                level = 2;
+            } else if (!canLevelUpTo(1)) {
+                level = 0;
+            }
+        } else if (level == 2) {
+            if (canLevelUpTo(3)) {
+                level = 3;
+            } else if (!canLevelUpTo(2)) {
+                level = 1;
+            }
+        } else if (level == 3) {
+            if (!canLevelUpTo(3)) {
+                level = 2;
             }
         }
+
         output = calculateOutput(m);
     }
 
-    public int getLevel() { 
-        return level; 
+    public int getLevel() {
+        return level;
     }
-    
-    public int getOutput() { 
-        return output; 
+
+    public int getOutput() {
+        return output;
     }
-    
-    public void setElectricity(int e) { 
-        this.receivedElectricity = e; 
+
+    public void setElectricity(int e) {
+        receivedElectricity = e;
     }
-    
-    public void setWater(int w) { 
-        this.receivedWater = w; 
+
+    public void setWater(int w) {
+        receivedWater = w;
     }
-    
-    public void setInternet(int i) { 
-        this.receivedInternet = i; 
-    }
-    
-    public void setSecurity(boolean s) { 
-        this.hasSecurity = s; 
-    }
-    
-    public void setHealth(boolean h) { 
-        this.hasHealth = h; 
-    }
-    
-    public void setEducation(boolean e) { 
-        this.hasEducation = e; 
+
+    public void setInternet(int i) {
+        receivedInternet = i;
     }
 }
