@@ -53,7 +53,9 @@ public class Commercial extends Zone {
         if (level == 2) {
             return 2 * m;
         }
-        return (2 * m) + (receivedPopulation * receivedGoods);
+
+        // HATA BURADAYDI: (receivedPopulation * receivedGoods) yerine Math.min olmalı!
+        return (2 * m) + Math.min(receivedPopulation, receivedGoods);
     }
 
     public void setPopulation(int p) { 

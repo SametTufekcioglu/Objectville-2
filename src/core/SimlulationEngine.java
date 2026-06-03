@@ -147,28 +147,6 @@ public class SimlulationEngine {
                     }
                 }
             }
-
-            // Haritanın görsel halini en alta çiz
-            renderGrid(tick);
         }
-    }
-
-    private void renderGrid(int currentTick) {
-        System.out.println("--- MAP AT TICK " + currentTick + " ---");
-        int rows = cityGrid.getRows();
-        int cols = cityGrid.getCols();
-
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                Cell cell = cityGrid.getCell(i, j);
-                if (cell != null) {
-                    System.out.print(cell.getSymbol() + " ");
-                } else {
-                    System.out.print(". ");
-                }
-            }
-            System.out.println();
-        }
-        System.out.println("-------------------------------------\n");
     }
 }
