@@ -1,6 +1,7 @@
 package models.services;
 
 import models.Cell;
+import models.zones.Housing;
 
 public class School extends ServiceProvider{
     public School(int x, int y) {
@@ -8,8 +9,14 @@ public class School extends ServiceProvider{
     }
 
     @Override
-    protected void applyService(Cell target) {
-        target.setHasEducation(true);
+    protected boolean applyService(Cell target) {
+        if (target instanceof Housing){
+            Housing house = (Housing) target;
+            house.setHasEducation(true);
+            return true;
+        }
+
+        return false;
     }
 
     @Override

@@ -7,8 +7,9 @@ public class PoliceStation extends ServiceProvider{
         super(x,y,5);
     }
     @Override
-    protected void applyService(Cell target){
+    protected boolean applyService(Cell target){
         target.setHasSecurity(true);
+        return true;
     }
     @Override
     public char getSymbol(){

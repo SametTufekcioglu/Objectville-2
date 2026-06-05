@@ -78,17 +78,19 @@ public abstract class Zone extends Cell {
 
         String typeName = this instanceof Housing ? "House" : (this instanceof Industrial ? "Industrial" : "Commercial");
 
-        if (level > oldLevel) {
-            System.out.println(typeName + " at (" + x + "," + y + ") levels up from " + oldLevel + " to " + level);
-        } else if (level < oldLevel) {
-            System.out.println(typeName + " at (" + x + "," + y + ") levels down from " + oldLevel + " to " + level);
-        }
+
 
         output = calculateOutput(m);
 
         if (output > 0) {
             String resourceName = this instanceof Housing ? "population" : (this instanceof Industrial ? "goods" : "lifestyle");
             System.out.println(typeName + " at (" + x + "," + y + ") generated " + output + " " + resourceName);
+        }
+
+        if (level > oldLevel) {
+            System.out.println(typeName + " at (" + x + "," + y + ") levels up from " + oldLevel + " to " + level);
+        } else if (level < oldLevel) {
+            System.out.println(typeName + " at (" + x + "," + y + ") levels down from " + oldLevel + " to " + level);
         }
     }
 

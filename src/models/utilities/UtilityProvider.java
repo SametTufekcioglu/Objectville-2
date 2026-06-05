@@ -11,6 +11,7 @@ public abstract class UtilityProvider extends Cell {
         this.capacity = 100;
     }
 
+
     public int getCapacity() {
         return capacity;
     }
