@@ -49,7 +49,7 @@ public abstract class Zone extends Cell {
     }
 
     public void updateTick() {
-        // Cell üst sınıfından o tick gelen güncel servis durumlarını local boolean'lara senkronize et
+
         this.hasSecurity = this.isHasSecurity();
         this.hasHealth = this.isHasHealth();
         this.hasEducation = this.isHasEducation();
@@ -61,7 +61,6 @@ public abstract class Zone extends Cell {
 
         if (m == Integer.MAX_VALUE) m = 0;
 
-        // Kural: Eğer bölge hiçbir altyapıyı alamadıysa (veya alması gerekenler 0 ise) anında 0'a düşer
         boolean totallyCut = (needsElectricity() && receivedElectricity == 0) || (needsWater() && receivedWater == 0) || (needsInternet() && receivedInternet == 0);
 
         int oldLevel = level;

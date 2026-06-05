@@ -54,7 +54,6 @@ public class Commercial extends Zone {
             return 2 * m;
         }
 
-        // HATA BURADAYDI: (receivedPopulation * receivedGoods) yerine Math.min olmalı!
         return (2 * m) + Math.min(receivedPopulation, receivedGoods);
     }
 

@@ -27,9 +27,9 @@ public abstract class ServiceProvider extends Cell {
                 if(target==null){
                     continue;
                 }
-
-               // int distance = Math.abs(this.getX()-i)+Math.abs(this.getY()-j);
-              //  int distance = Math.max(Math.abs(this.getX() - i), Math.abs(this.getY() - j));
+                //dev 1 note: these distance calculations below have been tested. They were not working correctly.
+                 // int distance = Math.abs(this.getX()-i)+Math.abs(this.getY()-j);
+                 //int distance = Math.max(Math.abs(this.getX() - i), Math.abs(this.getY() - j));
 
                 double distance = Math.sqrt(Math.pow(this.getX() - i, 2) + Math.pow(this.getY() - j, 2));
 
@@ -44,20 +44,18 @@ public abstract class ServiceProvider extends Cell {
                         String serviceName = "";
                         if (this instanceof PoliceStation) serviceName = "security";
                         else if (this instanceof Hospital) serviceName = "health";
-                            //sıkıntı
                         else if (this instanceof School) serviceName = "education";
 
                         if (!targetTypeName.isEmpty()) {
                             System.out.println(targetTypeName + " at (" + i + "," + j + ") received " + serviceName + " service");
                         }}
 
-                    // Örnek çıktıdaki isimlendirmelerle log basalım:
+
 
                 }
             }
         }
     }
 
-    //void -> boolean oldu o yüzden applyService hepsinde update edilmeli
     protected abstract boolean applyService(Cell target);
 }

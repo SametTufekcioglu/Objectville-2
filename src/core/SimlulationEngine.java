@@ -13,7 +13,7 @@ public class SimlulationEngine {
     private CityGrid cityGrid;
     private int totalTicks;
 
-    // Global Havuz Değişkenleri (Her tick sonunda birikir, bir sonraki tick başında dağıtılır)
+
     private int currentPopulationPool = 0;
     private int currentGoodsPool = 0;
     private int currentLifestylePool = 0;
@@ -30,7 +30,7 @@ public class SimlulationEngine {
         for (int tick = 1; tick <= totalTicks; tick++) {
             System.out.println("Tick " + tick);
 
-            // ADIM 0: Önceki Tick servis ve altyapılarını sıfırla ama havuz verilerine dokunma
+
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     Cell cell = cityGrid.getCell(i, j);
@@ -43,7 +43,6 @@ public class SimlulationEngine {
                 }
             }
 
-            // ADIM 1: Servislerin Dağıtılması (Yarıçap kontrolü)
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     Cell cell = cityGrid.getCell(i, j);
@@ -53,7 +52,6 @@ public class SimlulationEngine {
                 }
             }
 
-            // ADIM 2: Altyapıların Dağıtılması (BFS Algoritması)
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     Cell cell = cityGrid.getCell(i, j);
@@ -63,7 +61,6 @@ public class SimlulationEngine {
                 }
             }
 
-            // ADIM 3: Önceki Tick'ten kalan üretimin (Global Havuzun) eşit dağıtılması (Tick 1'de havuz 0'dır)
             int industrialCount = 0, commercialCount = 0, housingCount = 0;
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
@@ -74,7 +71,7 @@ public class SimlulationEngine {
                 }
             }
 
-            // Nüfus Dağıtımı (Industrial + Commercial bölgelerine eşit bölünür)
+
             int totalZones = industrialCount + commercialCount;
             if (currentPopulationPool > 0 && totalZones > 0) {
                 int popPerZone = currentPopulationPool / totalZones;
@@ -89,7 +86,7 @@ public class SimlulationEngine {
                 }
             }
 
-            // Goods Dağıtımı (Sadece Commercial bölgelerine eşit bölünür)
+
             if (currentGoodsPool > 0 && commercialCount > 0) {
                 int goodsPerZone = currentGoodsPool / commercialCount;
                 for (int i = 0; i < rows; i++) {
@@ -103,7 +100,7 @@ public class SimlulationEngine {
                 }
             }
 
-            // Lifestyle Dağıtımı (Sadece Housing bölgelerine eşit bölünür)
+
             if (currentLifestylePool > 0 && housingCount > 0) {
                 int lifestylePerZone = currentLifestylePool / housingCount;
                 for (int i = 0; i < rows; i++) {
@@ -117,7 +114,7 @@ public class SimlulationEngine {
                 }
             }
 
-            // ADIM 4: Bölgelerin Seviyelerini Güncellemesi (Level Up / Down logları burada tetiklenir)
+
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {
                     Cell cell = cityGrid.getCell(i, j);
@@ -127,7 +124,7 @@ public class SimlulationEngine {
                 }
             }
 
-            // ADIM 5: Yeni Üretimlerin Bir Sonraki Tick İçin Havuzda Biriktirilmesi (Accumulate)
+
             currentPopulationPool = 0;
             currentGoodsPool = 0;
             currentLifestylePool = 0;

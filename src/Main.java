@@ -18,10 +18,10 @@ public class Main {
         }
         String mapFilePath = args[0];
 
-
-        System.out.println("Map is loading: " + mapFilePath);
-        System.out.println("Tick value: " + ticks);
-        System.out.println("-----------------------");
+    //dev1 note: I disabled this part because sample output did not have it.
+      //  System.out.println("Map is loading: " + mapFilePath);
+      //  System.out.println("Tick value: " + ticks);
+      //  System.out.println("-----------------------");
 
         MapParser parser = new MapParser();
         parser.loadData(mapFilePath);

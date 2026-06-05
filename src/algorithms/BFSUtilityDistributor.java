@@ -46,19 +46,17 @@ public class BFSUtilityDistributor {
 
                     if (neighbor instanceof Zone) {
                         Zone zone = (Zone) neighbor;
-                        // 1. KURAL: Bölgenin o anki toplam maksimum altyapı talebi (minimum 1)
+
                         int maxDemand = Math.max(zone.getOutput(), 1);
 
-                        // 2. KURAL: Bu hücrenin O TICK İÇİNDE bu kaynaktan zaten ne kadar aldığını bulalım
                         int alreadyReceived = 0;
                         if (provider.getSymbol() == 'P') alreadyReceived = zone.getReceivedElectricity();
                         else if (provider.getSymbol() == 'W') alreadyReceived = zone.getReceivedWater();
                         else if (provider.getSymbol() == 'T') alreadyReceived = zone.getReceivedInternet();
 
-                        // 3. KURAL: Hücrenin kalan gerçek net ihtiyacını hesapla (0'ın altına düşmesin)
+
                         int netDemand = Math.max(0, maxDemand - alreadyReceived);
 
-                        // Sağlayıcının elinde kalan kapasite ile hücrenin net ihtiyacından küçük olanı kadar soğur
                         int absorbed = Math.min(netDemand, remaining);
                         remaining -= absorbed;
 
