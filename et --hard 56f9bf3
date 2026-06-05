@@ -1,0 +1,37 @@
+[33m19928dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/utilities-bfs[m[33m, [m[1;31morigin/feature/utilities-bfs[m[33m)[m HEAD@{0}: checkout: moving from main to feature/utilities-bfs
+[33m03fd3fc[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m HEAD@{1}: reset: moving to origin/main
+[33m0a12c43[m HEAD@{2}: reset: moving to HEAD
+[33m0a12c43[m HEAD@{3}: commit: workspace.xml added to gitignore
+[33m507fb8b[m[33m ([m[1;31morigin/fix-zone-downgrades[m[33m)[m HEAD@{4}: checkout: moving from feature/utilities-bfs to main
+[33m19928dc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mfeature/utilities-bfs[m[33m, [m[1;31morigin/feature/utilities-bfs[m[33m)[m HEAD@{5}: commit (merge): Merging into main
+[33m56f9bf3[m HEAD@{6}: reset: moving to HEAD
+[33m56f9bf3[m HEAD@{7}: checkout: moving from feature/utilities-bfs to feature/utilities-bfs
+[33m56f9bf3[m HEAD@{8}: commit: Changes on SimulationEngine and Commercial.
+[33m1c7c5ce[m HEAD@{9}: checkout: moving from main to feature/utilities-bfs
+[33m507fb8b[m[33m ([m[1;31morigin/fix-zone-downgrades[m[33m)[m HEAD@{10}: merge origin/main: Fast-forward
+[33m70d360e[m HEAD@{11}: checkout: moving from feature/utilities-bfs to main
+[33m1c7c5ce[m HEAD@{12}: commit: Fix the entire output part. Updated necessary classes (BFSUtilityDistributor, MapParser, ServiceProvider, SimulationEngine, Zone, Main). Project is ready to go...
+[33m8f3de38[m HEAD@{13}: commit: Fix the most of the output part. Added comment lines (// DEV 3 Added) to understand which part i wrote. Didnt merge into main yet, still need to improve.
+[33m70d360e[m HEAD@{14}: merge main: Fast-forward
+[33mee42981[m HEAD@{15}: reset: moving to HEAD
+[33mee42981[m HEAD@{16}: checkout: moving from feature/utilities-bfs to feature/utilities-bfs
+[33mee42981[m HEAD@{17}: checkout: moving from main to feature/utilities-bfs
+[33m70d360e[m HEAD@{18}: merge origin/main: Fast-forward
+[33medf5328[m HEAD@{19}: checkout: moving from feature/utilities-bfs to main
+[33mee42981[m HEAD@{20}: commit: Some changes on MapParser (Add zone and service parsing). Created and integrated BFS into SimulationEngine.
+[33medf5328[m HEAD@{21}: merge main: Fast-forward
+[33m487fe48[m HEAD@{22}: checkout: moving from main to feature/utilities-bfs
+[33medf5328[m HEAD@{23}: checkout: moving from feature/utilities-bfs to main
+[33m487fe48[m HEAD@{24}: checkout: moving from main to feature/utilities-bfs
+[33medf5328[m HEAD@{25}: checkout: moving from feature/utilities-bfs to main
+[33m487fe48[m HEAD@{26}: checkout: moving from main to feature/utilities-bfs
+[33medf5328[m HEAD@{27}: merge origin/main: Fast-forward
+[33m8454b62[m[33m ([m[1;31morigin/dev1[m[33m)[m HEAD@{28}: checkout: moving from feature/utilities-bfs to main
+[33m487fe48[m HEAD@{29}: commit: 3. Developer started to work.
+[33m8454b62[m[33m ([m[1;31morigin/dev1[m[33m)[m HEAD@{30}: checkout: moving from main to feature/utilities-bfs
+[33m8454b62[m[33m ([m[1;31morigin/dev1[m[33m)[m HEAD@{31}: merge origin/main: Fast-forward
+[33m9bd12b7[m HEAD@{32}: commit: Unnecessary commit
+[33m84bc9ca[m HEAD@{33}: commit: Trying to apply base settings
+[33mffbd970[m HEAD@{34}: commit: Trying to apply base settings
+[33m8dbad8a[m HEAD@{35}: commit: Add sample App.java
+[33m78c536b[m HEAD@{36}: clone: from https://github.com/SametTufekcioglu/Objectville-2.git

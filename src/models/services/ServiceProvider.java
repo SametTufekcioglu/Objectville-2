@@ -35,7 +35,6 @@ public abstract class ServiceProvider extends Cell {
 
                 if(distance<=this.radius){
                     boolean isServiceApplied = applyService(target);
-                    //applyService(target);
                     if(isServiceApplied){ String targetTypeName = "";
                         if (target instanceof Housing) targetTypeName = "House";
                         else if (target instanceof Industrial) targetTypeName = "Industrial";
