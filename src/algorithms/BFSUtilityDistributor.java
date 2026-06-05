@@ -47,30 +47,36 @@ public class BFSUtilityDistributor {
                     if (neighbor instanceof Zone) {
                         Zone zone = (Zone) neighbor;
 
-                        int maxDemand = Math.max(zone.getOutput(), 1);
+                        boolean needs = true;
+                        if (provider.getSymbol() == 'P' && !zone.needsElectricity()) needs = false;
+                        if (provider.getSymbol() == 'W' && !zone.needsWater()) needs = false;
+                        if (provider.getSymbol() == 'T' && !zone.needsInternet()) needs = false;
 
-                        int alreadyReceived = 0;
-                        if (provider.getSymbol() == 'P') alreadyReceived = zone.getReceivedElectricity();
-                        else if (provider.getSymbol() == 'W') alreadyReceived = zone.getReceivedWater();
-                        else if (provider.getSymbol() == 'T') alreadyReceived = zone.getReceivedInternet();
+                        if (needs) {
+                            int maxDemand = Math.max(zone.getOutput(), 1);;
 
+                            int alreadyReceived = 0;
+                            if (provider.getSymbol() == 'P') alreadyReceived = zone.getReceivedElectricity();
+                            else if (provider.getSymbol() == 'W') alreadyReceived = zone.getReceivedWater();
+                            else if (provider.getSymbol() == 'T') alreadyReceived = zone.getReceivedInternet();
 
-                        int netDemand = Math.max(0, maxDemand - alreadyReceived);
+                            int netDemand = Math.max(0, maxDemand - alreadyReceived);
 
-                        int absorbed = Math.min(netDemand, remaining);
-                        remaining -= absorbed;
+                            int absorbed = Math.min(netDemand, remaining);
+                            remaining -= absorbed;
 
-                        if (absorbed > 0) {
-                            String typeName = zone instanceof Housing ? "House" : (zone instanceof Industrial ? "Industrial" : "Commercial");
-                            if (provider.getSymbol() == 'P') {
-                                zone.setElectricity(alreadyReceived + absorbed);
-                                System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " electricity");
-                            } else if (provider.getSymbol() == 'W') {
-                                zone.setWater(alreadyReceived + absorbed);
-                                System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " water");
-                            } else if (provider.getSymbol() == 'T') {
-                                zone.setInternet(alreadyReceived + absorbed);
-                                System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " internet");
+                            if (absorbed > 0) {
+                                String typeName = zone instanceof Housing ? "House" : (zone instanceof Industrial ? "Industrial" : "Commercial");
+                                if (provider.getSymbol() == 'P') {
+                                    zone.setElectricity(alreadyReceived + absorbed);
+                                    System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " electricity");
+                                } else if (provider.getSymbol() == 'W') {
+                                    zone.setWater(alreadyReceived + absorbed);
+                                    System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " water");
+                                } else if (provider.getSymbol() == 'T') {
+                                    zone.setInternet(alreadyReceived + absorbed);
+                                    System.out.println(typeName + " at (" + nx + "," + ny + ") received " + absorbed + " internet");
+                                }
                             }
                         }
                     }

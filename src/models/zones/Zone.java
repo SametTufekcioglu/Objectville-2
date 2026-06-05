@@ -79,13 +79,16 @@ public abstract class Zone extends Cell {
 
 
 
+        // 1. Önce hesapla
         output = calculateOutput(m);
 
-        if (output > 0) {
+        // 2. Önce üretimi yazdır
+        if (output >= 0) { // 0 olsa bile raporlamasını istiyor olabilir
             String resourceName = this instanceof Housing ? "population" : (this instanceof Industrial ? "goods" : "lifestyle");
             System.out.println(typeName + " at (" + x + "," + y + ") generated " + output + " " + resourceName);
         }
 
+        // 3. Sonra seviye değişimini yazdır
         if (level > oldLevel) {
             System.out.println(typeName + " at (" + x + "," + y + ") levels up from " + oldLevel + " to " + level);
         } else if (level < oldLevel) {

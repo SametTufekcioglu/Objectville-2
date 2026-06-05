@@ -1,9 +1,6 @@
 package models.zones;
 
 public class Commercial extends Zone {
-    protected int receivedPopulation = 0;
-    protected int receivedGoods = 0;
-
     public Commercial(int x, int y) {
         super(x, y);
     }
@@ -44,16 +41,9 @@ public class Commercial extends Zone {
 
     @Override
     protected int calculateOutput(int m) {
-        if (level == 0) {
-            return 0;
-        }
-        if (level == 1) {
-            return m;
-        }
-        if (level == 2) {
-            return 2 * m;
-        }
-
+        if (level == 0) return 0;
+        if (level == 1) return m;
+        if (level == 2) return 2 * m;
         return (2 * m) + Math.min(receivedPopulation, receivedGoods);
     }
 
@@ -65,10 +55,10 @@ public class Commercial extends Zone {
         this.receivedGoods = g;
     }
 
-    @Override
+    /*@Override
     public void resetTurn() {
         super.resetTurn();
         this.receivedPopulation = 0;
         this.receivedGoods = 0;
-    }
+    }*/
 }
