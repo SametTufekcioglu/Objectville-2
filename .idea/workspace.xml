@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9dfa1f88-cc03-4eb7-bfd5-cd96bbc71efc" name="Changes" comment="Trying to apply base settings" />
+    <list default="true" id="9dfa1f88-cc03-4eb7-bfd5-cd96bbc71efc" name="Changes" comment="Finished">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Objectville-2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Objectville-2/Main.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +48,65 @@
     <commands />
     <urls />
   </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.000256296832694" />
+      <entry key="MS500" value="1.2196720698314947" />
+      <entry key="S2" value="2.0717272759490837" />
+      <entry key="S5" value="2.5478455583963164" />
+      <entry key="S10" value="2.7574604794749167" />
+      <entry key="S30" value="2.9151612494880816" />
+      <entry key="S60" value="2.9570794907595124" />
+      <entry key="M2" value="2.9919858264482624" />
+      <entry key="M5" value="3.6845630959350735" />
+      <entry key="M10" value="5.66973334572098" />
+      <entry key="M15" value="7.240882445457266" />
+      <entry key="M30" value="9.793220682173512" />
+      <entry key="H1" value="11.631319938991178" />
+      <entry key="H2" value="12.740062249425359" />
+      <entry key="H4" value="13.34981938458078" />
+      <entry key="D1" value="13.888709987662061" />
+      <entry key="W1" value="13.984028141467412" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="7.9303237091387E-288" />
+      <entry key="S5" value="2.004664399820503E-115" />
+      <entry key="S10" value="6.2229035745405364E-58" />
+      <entry key="S30" value="1.3525073233603657E-19" />
+      <entry key="S60" value="5.356240255761561E-10" />
+      <entry key="M2" value="3.626118587454141E-5" />
+      <entry key="M5" value="0.031160543530850834" />
+      <entry key="M10" value="0.3034237886207804" />
+      <entry key="M15" value="0.6500753640244948" />
+      <entry key="M30" value="1.3952268482168275" />
+      <entry key="H1" value="2.0454173281223156" />
+      <entry key="H2" value="2.4770005940678512" />
+      <entry key="H4" value="2.7259462430648043" />
+      <entry key="D1" value="2.952475957182219" />
+      <entry key="W1" value="2.993164150822688" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.9729008040134467" />
+      <entry key="MS500" value="1.212400723028172" />
+      <entry key="S2" value="2.068399618230429" />
+      <entry key="S5" value="2.5461982917185457" />
+      <entry key="S10" value="2.756568472288068" />
+      <entry key="S30" value="2.9148468955513573" />
+      <entry key="S60" value="2.956920060623157" />
+      <entry key="M2" value="2.9919409987233947" />
+      <entry key="M5" value="3.715563553103547" />
+      <entry key="M10" value="5.972554519143084" />
+      <entry key="M15" value="7.890120708915154" />
+      <entry key="M30" value="11.187565857850688" />
+      <entry key="H1" value="13.676095748061321" />
+      <entry key="H2" value="15.21667570498811" />
+      <entry key="H4" value="16.07555294654979" />
+      <entry key="D1" value="16.841147602530338" />
+      <entry key="W1" value="16.97718674056184" />
+    </decayedShown>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6,
   &quot;fromUser&quot;: false
@@ -67,7 +130,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feature/utilities-bfs",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/kalpt/Desktop/Objectville-2",
@@ -77,13 +140,13 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "C:/Users/pc/IdeaProjects/Objectville-2/src/src/Main.java",
-    "project.structure.last.edited": "Modules",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main (4)">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Objectville-2" />
@@ -114,18 +177,26 @@
     </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="src" />
+      <module name="Objectville-2" />
+      <option name="PROGRAM_PARAMETERS" value="mymap.txt 10" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+      <item itemvalue="Application.Main (2)" />
+      <item itemvalue="Application.Main (3)" />
+      <item itemvalue="Application.Main (4)" />
+    </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (4)" />
         <item itemvalue="Application.Main (3)" />
         <item itemvalue="Application.Main (2)" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -153,7 +224,23 @@
       <option name="project" value="LOCAL" />
       <updated>1777911816906</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Trying to fix the output.">
+      <option name="closed" value="true" />
+      <created>1780691230425</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1780691230425</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Finished">
+      <option name="closed" value="true" />
+      <created>1780692352885</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1780692352885</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -161,7 +248,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Trying to apply base settings" />
-    <option name="LAST_COMMIT_MESSAGE" value="Trying to apply base settings" />
+    <MESSAGE value="Trying to fix the output." />
+    <MESSAGE value="Finished" />
+    <option name="LAST_COMMIT_MESSAGE" value="Finished" />
   </component>
   <component name="github-copilot-workspace">
     <instructionFileLocations>
