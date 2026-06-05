@@ -50,10 +50,4 @@ public class Industrial extends Zone {
     public void setPopulation(int p) { 
         this.receivedPopulation = p; 
     }
-    
-    /*@Override
-    public void resetTurn() {
-        super.resetTurn();
-        this.receivedPopulation = 0;
-    }*/
 }

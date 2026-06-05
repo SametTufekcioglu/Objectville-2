@@ -73,53 +73,56 @@ public class SimlulationEngine {
 
 
             int totalZones = industrialCount + commercialCount;
-            if (currentPopulationPool > 0 && totalZones > 0) {
-                int popPerZone = currentPopulationPool / totalZones;
-                if (totalZones > 0) {
-                    for (int i = 0; i < rows; i++) {
-                        for (int j = 0; j < cols; j++) {
-                            Cell cell = cityGrid.getCell(i, j);
-                            if (cell instanceof Industrial || cell instanceof Commercial) {
-                                ((Zone) cell).addReceivedPopulation(popPerZone);
-                                System.out.println(cell.getClass().getSimpleName() + " at (" + i + "," + j + ") received " + popPerZone + " population");
-                            }
-                        }
-                    }
-                }
-            }
 
+            int workZoneCount = industrialCount + commercialCount;
+
+            int popPerZone = 0;
+            int goodsPerCommercial = 0;
+            int lifestylePerHouse = 0;
+
+            if (currentPopulationPool > 0 && workZoneCount > 0) {
+                popPerZone = currentPopulationPool / workZoneCount;
+            }
 
             if (currentGoodsPool > 0 && commercialCount > 0) {
-                int goodsPerZone = currentGoodsPool / commercialCount;
-                if (totalZones > 0) {
-                    for (int i = 0; i < rows; i++) {
-                        for (int j = 0; j < cols; j++) {
-                            Cell cell = cityGrid.getCell(i, j);
-                            if (cell instanceof Commercial) {
-                                ((Zone) cell).addReceivedGoods(goodsPerZone);
-                                System.out.println("Commercial at (" + i + "," + j + ") received " + goodsPerZone + " goods");
-                            }
-                        }
-                    }
-                }
+                goodsPerCommercial = currentGoodsPool / commercialCount;
             }
-
 
             if (currentLifestylePool > 0 && housingCount > 0) {
-                int lifestylePerZone = currentLifestylePool / housingCount;
-                if (totalZones > 0) {
-                    for (int i = 0; i < rows; i++) {
-                        for (int j = 0; j < cols; j++) {
-                            Cell cell = cityGrid.getCell(i, j);
-                            if (cell instanceof Housing) {
-                                ((Zone) cell).addReceivedLifestyle(lifestylePerZone);
-                                System.out.println("House at (" + i + "," + j + ") received " + lifestylePerZone + " lifestyle");
-                            }
+                lifestylePerHouse = currentLifestylePool / housingCount;
+            }
+
+            for (int i = 0; i < rows; i++) {
+                for (int j = 0; j < cols; j++) {
+                    Cell cell = cityGrid.getCell(i, j);
+
+                    if (cell instanceof Commercial) {
+                        if (popPerZone > 0) {
+                            ((Zone) cell).addReceivedPopulation(popPerZone);
+                            System.out.println("Commercial at (" + i + "," + j + ") received " + popPerZone + " population");
+                        }
+
+                        if (goodsPerCommercial > 0) {
+                            ((Zone) cell).addReceivedGoods(goodsPerCommercial);
+                            System.out.println("Commercial at (" + i + "," + j + ") received " + goodsPerCommercial + " goods");
+                        }
+                    }
+
+                    else if (cell instanceof Industrial) {
+                        if (popPerZone > 0) {
+                            ((Zone) cell).addReceivedPopulation(popPerZone);
+                            System.out.println("Industrial at (" + i + "," + j + ") received " + popPerZone + " population");
+                        }
+                    }
+
+                    else if (cell instanceof Housing) {
+                        if (lifestylePerHouse > 0) {
+                            ((Zone) cell).addReceivedLifestyle(lifestylePerHouse);
+                            System.out.println("House at (" + i + "," + j + ") received " + lifestylePerHouse + " lifestyle");
                         }
                     }
                 }
             }
-
 
             for (int i = 0; i < rows; i++) {
                 for (int j = 0; j < cols; j++) {

@@ -40,9 +40,9 @@ public abstract class Zone extends Cell {
         this.receivedElectricity = 0;
         this.receivedWater = 0;
         this.receivedInternet = 0;
-        this.receivedPopulation = 0;    // DEV 3
-        this.receivedGoods = 0;         // DEV 3
-        this.receivedLifestyle = 0;     // DEV 3
+        this.receivedPopulation = 0;
+        this.receivedGoods = 0;
+        this.receivedLifestyle = 0;
         this.hasSecurity = false;
         this.hasHealth = false;
         this.hasEducation = false;
@@ -79,16 +79,13 @@ public abstract class Zone extends Cell {
 
 
 
-        // 1. Önce hesapla
         output = calculateOutput(m);
 
-        // 2. Önce üretimi yazdır
-        if (output >= 0) { // 0 olsa bile raporlamasını istiyor olabilir
+        if (output >= 0) {
             String resourceName = this instanceof Housing ? "population" : (this instanceof Industrial ? "goods" : "lifestyle");
             System.out.println(typeName + " at (" + x + "," + y + ") generated " + output + " " + resourceName);
         }
 
-        // 3. Sonra seviye değişimini yazdır
         if (level > oldLevel) {
             System.out.println(typeName + " at (" + x + "," + y + ") levels up from " + oldLevel + " to " + level);
         } else if (level < oldLevel) {

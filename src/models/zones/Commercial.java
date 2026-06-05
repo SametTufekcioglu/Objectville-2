@@ -55,10 +55,4 @@ public class Commercial extends Zone {
         this.receivedGoods = g;
     }
 
-    /*@Override
-    public void resetTurn() {
-        super.resetTurn();
-        this.receivedPopulation = 0;
-        this.receivedGoods = 0;
-    }*/
 }

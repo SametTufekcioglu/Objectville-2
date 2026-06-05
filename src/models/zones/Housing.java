@@ -50,10 +50,5 @@ public class Housing extends Zone {
     public void setLifestyle(int l) { 
         this.receivedLifestyle = l; 
     }
-    
-    /*@Override
-    public void resetTurn() {
-        super.resetTurn();
-        this.receivedLifestyle = 0;
-    }*/
+
 }
